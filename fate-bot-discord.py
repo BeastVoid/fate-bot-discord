@@ -1,5 +1,6 @@
 import discord
 import random
+import os
 
 client = discord.Client()
 semilla = 0
@@ -55,4 +56,4 @@ async def on_message(message):
         #await message.channel.send(message.author.mention + " | " + resultadoDadosTexto + " | Resultado: " + str(resultadoDadosNumero + modificador) + "          " + salidaDebug + "       | modTexto: " + modTexto)
         await message.channel.send(message.author.mention + " | " + resultadoDadosTexto + " | Resultado: " + str(resultadoDadosNumero + modificador))
 
-client.run(process.env.TOKEN)
+client.run(os.environ.get('TOKEN', None))
