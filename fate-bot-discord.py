@@ -4,8 +4,6 @@ import os
 
 client = discord.Client()
 semilla = 0
-frasesSergio = ['Vergacion!', 'Sale vicio?', 'He visto mejores', 'Ese juego es una mierda']
-frasesAlex = ['Manibular', 'Me voy a calentar las manos', 'Anda mal Internet, voy a reiniciar el router (y no vuelvo mas)', 'Tecnicamente no llegue tarde, sino que ustedes viven en otro huso horario', 'Me hago un te, ya vuelvo']
 
 @client.event
 async def onready():
@@ -16,13 +14,6 @@ async def onready():
 async def on_message(message):
     if message.author == client.user:
         return
-
-    if message.content.startswith('$hola'):
-        await message.channel.send('Hola!')
-    if message.content.startswith('!sergio'):
-        await message.channel.send(frasesSergio[random.randint(0, len(frasesSergio) - 1)])
-    if message.content.startswith('!alex'):
-        await message.channel.send(frasesAlex[random.randint(0, len(frasesAlex) - 1)])
 
     if message.content.startswith('!fate'):
         salidaDebug = ""
